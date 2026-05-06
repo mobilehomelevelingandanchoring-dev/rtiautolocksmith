@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const PHONE_DISPLAY = '07309 903 243'
 const PHONE_HREF    = 'tel:+447309903243'
@@ -47,8 +48,15 @@ export default function Footer() {
 
           {/* NAP block — exact match to Google Business Profile */}
           <div className="lg:col-span-1">
-            <div className="mb-4">
-              <span className="font-bold text-xl text-white">
+            <div className="mb-4 flex items-center gap-3">
+              <Image
+                src="/images/rti-auto-locksmith-logo-wigan.jpg"
+                alt="RTI Auto Locksmith Wigan logo"
+                width={52}
+                height={52}
+                className="rounded-full object-cover shrink-0"
+              />
+              <span className="font-bold text-xl text-white leading-tight">
                 <span className="text-yellow-400">RTI</span> Auto Locksmith
               </span>
             </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
 const PHONE_DISPLAY = '07309 903 243'
@@ -61,10 +62,20 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-bold text-lg text-gray-900 hover:text-yellow-600 transition-colors shrink-0"
+            className="shrink-0 flex items-center"
             aria-label="RTI Auto Locksmith — Home"
           >
-            <span className="text-yellow-500">RTI</span> Auto Locksmith
+            <Image
+              src="/images/rti-auto-locksmith-logo-wigan.jpg"
+              alt="RTI Auto Locksmith Wigan — Mobile Car Keys & Lockout Service"
+              width={56}
+              height={56}
+              className="rounded-full object-cover"
+              priority
+            />
+            <span className="ml-2 font-bold text-base text-gray-900 leading-tight hidden sm:block">
+              <span className="text-yellow-500">RTI</span> Auto Locksmith
+            </span>
           </Link>
 
           {/* Desktop nav */}
