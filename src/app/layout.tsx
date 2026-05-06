@@ -80,7 +80,7 @@ const localBusinessSchema = {
   description:
     'Mobile auto locksmith serving Wigan and surrounding areas 24/7. Car lockouts, key replacement, and key programming for all UK car makes.',
   url: BASE_URL,
-  telephone: '+44XXXXXXXXXX',
+  telephone: '+447309903243',
   priceRange: '££',
   currenciesAccepted: 'GBP',
   paymentAccepted: 'Cash, Credit Card, Debit Card',

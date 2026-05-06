@@ -91,13 +91,13 @@ export default function ChorleyPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="tel:+44XXXXXXXXXX"
+              href="tel:+447309903243"
               className="inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-lg px-8 py-4 rounded-lg transition-colors"
             >
               &#128222; Call RTI Now
             </a>
             <a
-              href="https://wa.me/44XXXXXXXXXX"
+              href="https://wa.me/447309903243"
               className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold text-lg px-8 py-4 rounded-lg transition-colors"
             >
               &#128172; WhatsApp Us
@@ -228,7 +228,7 @@ export default function ChorleyPage() {
             Call RTI directly for a clear quote and honest ETA. No call-out fee. Available 24/7.
           </p>
           <a
-            href="tel:+44XXXXXXXXXX"
+            href="tel:+447309903243"
             className="inline-flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-bold text-xl px-10 py-5 rounded-lg transition-colors"
           >
             &#128222; Call RTI Auto Locksmith

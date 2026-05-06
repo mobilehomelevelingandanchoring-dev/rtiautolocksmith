@@ -32,7 +32,7 @@ export default function manifest(): MetadataRoute.Manifest {
         name: 'Call RTI Now',
         short_name: 'Call Now',
         description: 'Tap to call RTI Auto Locksmith directly',
-        url: 'tel:+44XXXXXXXXXX',
+        url: 'tel:+447309903243',
         icons: [{ src: '/icons/icon-192.png', sizes: '192x192' }],
       },
     ],

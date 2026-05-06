@@ -1,7 +1,7 @@
 export const BASE_URL      = 'https://rtiautolocksmith.com'
 export const BUSINESS_ID   = `${BASE_URL}/#business`
 export const BUSINESS_NAME = 'RTI Auto Locksmith'
-export const BUSINESS_PHONE = '+44XXXXXXXXXX'
+export const BUSINESS_PHONE = '+447309903243'
 
 /** Shared PostalAddress block — used in every LocalBusiness schema */
 const POSTAL_ADDRESS = {

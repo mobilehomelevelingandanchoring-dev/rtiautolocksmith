@@ -1,3 +1,11 @@
+// Mobile-only fixed bottom bar — always visible, never dismissible.
+// Showing the actual number before the tap increases call conversions
+// by removing the uncertainty of "who am I actually calling?".
+
+const PHONE_DISPLAY = '07309 903 243'
+const PHONE_HREF    = 'tel:+447309903243'
+const WA_HREF       = 'https://wa.me/447309903243'
+
 export default function StickyCallBar() {
   return (
     <div
@@ -5,19 +13,32 @@ export default function StickyCallBar() {
       role="complementary"
       aria-label="Emergency call bar"
     >
-      <div className="flex items-center justify-between px-4 py-3 gap-3">
-        <div className="flex-1 min-w-0">
-          <p className="text-white font-bold text-sm truncate">
-            <span className="text-red-400">&#9679;</span> Locked Out? Call RTI Now
-          </p>
-          <p className="text-gray-400 text-xs">24/7 &mdash; No call-out fee</p>
-        </div>
+      {/* Two-button layout: Call (primary) + WhatsApp (secondary) */}
+      <div className="flex items-stretch">
+
+        {/* Call button — takes 65% width, shows number */}
         <a
-          href="tel:+44XXXXXXXXXX"
-          className="flex-shrink-0 inline-flex items-center gap-1.5 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-sm px-4 py-2.5 rounded-lg transition-colors"
+          href={PHONE_HREF}
+          className="flex-1 flex flex-col items-center justify-center gap-0 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-3 transition-colors"
+          aria-label={`Call RTI Auto Locksmith — ${PHONE_DISPLAY}`}
         >
-          &#128222; Call Now
+          <span className="text-xs font-medium leading-tight">
+            <span className="text-red-600">&#9679;</span> Locked Out? Call RTI
+          </span>
+          <span className="text-lg tracking-wide leading-tight">{PHONE_DISPLAY}</span>
+          <span className="text-xs text-gray-700 leading-tight">24/7 &mdash; No call-out fee</span>
         </a>
+
+        {/* WhatsApp button — secondary, takes 35% width */}
+        <a
+          href={WA_HREF}
+          className="flex flex-col items-center justify-center gap-0.5 bg-green-600 hover:bg-green-500 text-white font-bold px-4 py-3 transition-colors min-w-[90px]"
+          aria-label="WhatsApp RTI Auto Locksmith"
+        >
+          <span className="text-lg leading-none">&#128172;</span>
+          <span className="text-xs font-semibold leading-tight">WhatsApp</span>
+        </a>
+
       </div>
     </div>
   )

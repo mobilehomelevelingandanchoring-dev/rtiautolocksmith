@@ -67,7 +67,7 @@ export default function ContactPage() {
               fastest route. We answer any time, day or night.
             </p>
             <a
-              href="tel:+44XXXXXXXXXX"
+              href="tel:+447309903243"
               className="inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-xl px-8 py-4 rounded-lg transition-colors w-full"
             >
               Call RTI Now
@@ -84,7 +84,7 @@ export default function ContactPage() {
               the issue. We will come back to you quickly with a quote.
             </p>
             <a
-              href="https://wa.me/44XXXXXXXXXX"
+              href="https://wa.me/447309903243"
               className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-400 text-white font-bold text-xl px-8 py-4 rounded-lg transition-colors w-full"
             >
               WhatsApp RTI
@@ -181,7 +181,7 @@ export default function ContactPage() {
             No call-out fee. Honest pricing. Straight answers.
           </p>
           <a
-            href="tel:+44XXXXXXXXXX"
+            href="tel:+447309903243"
             className="inline-flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-bold text-xl px-10 py-5 rounded-lg transition-colors"
           >
             &#128222; Call RTI Auto Locksmith

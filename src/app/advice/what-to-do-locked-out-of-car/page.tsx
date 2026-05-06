@@ -113,7 +113,7 @@ export default function LockedOutAdvicePage() {
           </p>
           <div className="mt-4">
             <a
-              href="tel:+44XXXXXXXXXX"
+              href="tel:+447309903243"
               className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-6 py-3 rounded-lg transition-colors"
             >
               &#128222; Call RTI Now
@@ -287,7 +287,7 @@ export default function LockedOutAdvicePage() {
             No hold music. Just a real person ready to help.
           </p>
           <a
-            href="tel:+44XXXXXXXXXX"
+            href="tel:+447309903243"
             className="inline-flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-bold text-xl px-10 py-5 rounded-lg transition-colors"
           >
             &#128222; Call RTI Auto Locksmith

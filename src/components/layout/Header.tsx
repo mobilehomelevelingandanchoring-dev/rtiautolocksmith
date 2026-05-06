@@ -3,58 +3,72 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
+const PHONE_DISPLAY = '07309 903 243'
+const PHONE_HREF    = 'tel:+447309903243'
+const WA_HREF       = 'https://wa.me/447309903243'
+
 const navLinks = [
   {
     label: 'Services',
     children: [
-      { label: 'Car Lockout Service', href: '/car-lockout-service' },
-      { label: 'Car Key Replacement', href: '/car-key-replacement' },
-      { label: 'Lost Car Keys', href: '/lost-car-keys' },
-      { label: 'Car Key Programming', href: '/car-key-programming' },
-      { label: 'Emergency Locksmith', href: '/emergency-auto-locksmith' },
+      { label: 'Car Lockout Service',  href: '/car-lockout-service' },
+      { label: 'Car Key Replacement',  href: '/car-key-replacement' },
+      { label: 'Lost Car Keys',        href: '/lost-car-keys' },
+      { label: 'Car Key Programming',  href: '/car-key-programming' },
+      { label: 'Emergency Locksmith',  href: '/emergency-auto-locksmith' },
     ],
   },
   {
     label: 'Areas',
     children: [
-      { label: 'Wigan', href: '/auto-locksmith-wigan' },
-      { label: 'Chorley', href: '/auto-locksmith-chorley' },
-      { label: 'Leyland', href: '/auto-locksmith-leyland' },
-      { label: 'St Helens', href: '/auto-locksmith-st-helens' },
+      { label: 'Wigan',        href: '/auto-locksmith-wigan' },
+      { label: 'Chorley',      href: '/auto-locksmith-chorley' },
+      { label: 'Leyland',      href: '/auto-locksmith-leyland' },
+      { label: 'St Helens',    href: '/auto-locksmith-st-helens' },
       { label: 'Skelmersdale', href: '/auto-locksmith-skelmersdale' },
     ],
   },
   {
     label: 'Advice',
     children: [
-      { label: 'Locked Out of Your Car?', href: '/advice/what-to-do-locked-out-of-car' },
-      { label: 'Key Replacement Cost', href: '/advice/car-key-replacement-cost-uk' },
-      { label: 'Key Without Original?', href: '/advice/can-locksmith-make-key-without-original' },
-      { label: 'Types of Car Keys', href: '/advice/types-of-car-keys-explained' },
+      { label: 'Locked Out of Your Car?',  href: '/advice/what-to-do-locked-out-of-car' },
+      { label: 'Key Replacement Cost',     href: '/advice/car-key-replacement-cost-uk' },
+      { label: 'Key Without Original?',    href: '/advice/can-locksmith-make-key-without-original' },
+      { label: 'Types of Car Keys',        href: '/advice/types-of-car-keys-explained' },
     ],
   },
-  { label: 'About', href: '/about' },
+  { label: 'About',   href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export default function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileOpen, setMobileOpen]     = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+
+      {/* Urgency bar — desktop only */}
+      <div className="hidden md:block bg-gray-900 text-center py-1.5">
+        <span className="text-gray-400 text-xs">Available&nbsp;</span>
+        <span className="text-yellow-400 text-xs font-semibold">24 hours a day, 7 days a week</span>
+        <span className="text-gray-400 text-xs"> &mdash; No call-out fee &mdash; All UK car makes</span>
+      </div>
+
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
+
           {/* Logo */}
           <Link
             href="/"
-            className="font-bold text-lg text-gray-900 hover:text-yellow-600 transition-colors"
+            className="font-bold text-lg text-gray-900 hover:text-yellow-600 transition-colors shrink-0"
             aria-label="RTI Auto Locksmith — Home"
           >
             <span className="text-yellow-500">RTI</span> Auto Locksmith
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-5" aria-label="Main navigation">
             {navLinks.map((item) =>
               item.children ? (
                 <div
@@ -68,8 +82,7 @@ export default function Header() {
                     aria-expanded={openDropdown === item.label}
                     aria-haspopup="true"
                   >
-                    {item.label}
-                    <span className="text-xs">&#9660;</span>
+                    {item.label} <span className="text-xs">&#9660;</span>
                   </button>
                   {openDropdown === item.label && (
                     <div className="absolute top-full left-0 mt-1 w-52 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
@@ -97,20 +110,23 @@ export default function Header() {
             )}
           </nav>
 
-          {/* Desktop CTA */}
+          {/* Desktop CTA — number visible before the tap */}
           <a
-            href="tel:+44XXXXXXXXXX"
-            className="hidden md:inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-sm px-4 py-2.5 rounded-lg transition-colors"
+            href={PHONE_HREF}
+            className="hidden md:inline-flex flex-col items-center justify-center bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-5 py-2 rounded-lg transition-colors leading-tight group"
+            aria-label={`Call RTI Auto Locksmith on ${PHONE_DISPLAY}`}
           >
-            &#128222; Call Now &mdash; 24/7
+            <span className="text-xs font-medium text-gray-700">&#128222; Call Now — 24/7</span>
+            <span className="text-base tracking-wide">{PHONE_DISPLAY}</span>
           </a>
 
-          {/* Mobile menu button */}
+          {/* Mobile hamburger */}
           <button
             className="md:hidden p-2 text-gray-700 hover:text-yellow-600"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
             {mobileOpen ? (
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -125,9 +141,21 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-4">
+        <div id="mobile-menu" className="md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-4">
+
+          {/* Primary CTA — top of menu, number visible */}
+          <a
+            href={PHONE_HREF}
+            className="flex flex-col items-center justify-center gap-0.5 bg-yellow-400 text-gray-900 font-bold py-4 rounded-xl"
+            onClick={() => setMobileOpen(false)}
+          >
+            <span className="text-sm">&#128222; Call RTI Now — 24/7</span>
+            <span className="text-2xl tracking-wide">{PHONE_DISPLAY}</span>
+          </a>
+
+          {/* Nav links */}
           {navLinks.map((item) =>
             item.children ? (
               <div key={item.label}>
@@ -139,7 +167,7 @@ export default function Header() {
                     <Link
                       key={child.href}
                       href={child.href}
-                      className="block text-sm text-gray-700 py-1 hover:text-yellow-600"
+                      className="block text-sm text-gray-700 py-1.5 hover:text-yellow-600"
                       onClick={() => setMobileOpen(false)}
                     >
                       {child.label}
@@ -158,14 +186,15 @@ export default function Header() {
               </Link>
             )
           )}
-          <div className="pt-2 border-t border-gray-100">
-            <a
-              href="tel:+44XXXXXXXXXX"
-              className="flex items-center justify-center gap-2 bg-yellow-400 text-gray-900 font-bold text-base py-3 rounded-lg"
-            >
-              &#128222; Call RTI — 24/7
-            </a>
-          </div>
+
+          {/* WhatsApp secondary */}
+          <a
+            href={WA_HREF}
+            className="flex items-center justify-center gap-2 border-2 border-green-500 text-green-700 font-semibold text-sm py-3 rounded-xl"
+            onClick={() => setMobileOpen(false)}
+          >
+            &#128172; WhatsApp Us Instead
+          </a>
         </div>
       )}
     </header>
