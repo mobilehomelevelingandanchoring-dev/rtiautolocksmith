@@ -3,6 +3,8 @@ import Link from 'next/link'
 const PHONE_DISPLAY = '07309 903 243'
 const PHONE_HREF    = 'tel:+447309903243'
 const WA_HREF       = 'https://wa.me/447309903243'
+const EMAIL_DISPLAY = 'rtiautolocksmith@gmail.com'
+const EMAIL_HREF    = 'mailto:rtiautolocksmith@gmail.com'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -10,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
 
-      {/* ── Pre-footer call-to-action band ────────────────────────────────── */}
+      {/* ── Pre-footer CTA band ───────────────────────────────────────────── */}
       <div className="bg-yellow-400 py-6">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
@@ -43,19 +45,24 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 py-14">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-          {/* NAP block */}
+          {/* NAP block — exact match to Google Business Profile */}
           <div className="lg:col-span-1">
             <div className="mb-4">
               <span className="font-bold text-xl text-white">
                 <span className="text-yellow-400">RTI</span> Auto Locksmith
               </span>
             </div>
-            <div className="space-y-1 text-sm">
-              <p className="font-semibold text-white">RTI Auto Locksmith</p>
-              <p>Mobile auto locksmith</p>
-              <p>Wigan, Greater Manchester</p>
 
-              {/* Phone — large, clickable, conspicuous */}
+            <address className="not-italic space-y-1 text-sm">
+              {/* Business name */}
+              <p className="font-semibold text-white">RTI Auto Locksmith</p>
+
+              {/* Street address */}
+              <p>4A Loch Street</p>
+              <p>Wigan, WN5 0AN</p>
+              <p>United Kingdom</p>
+
+              {/* Phone */}
               <p className="pt-3">
                 <a
                   href={PHONE_HREF}
@@ -67,6 +74,7 @@ export default function Footer() {
               </p>
               <p className="text-xs text-gray-400">&#128222; Tap to call &mdash; answered 24/7</p>
 
+              {/* WhatsApp */}
               <p className="pt-1">
                 <a
                   href={WA_HREF}
@@ -76,10 +84,20 @@ export default function Footer() {
                 </a>
               </p>
 
+              {/* Email */}
+              <p className="pt-1">
+                <a
+                  href={EMAIL_HREF}
+                  className="text-gray-400 hover:text-yellow-400 transition-colors break-all"
+                >
+                  &#9993; {EMAIL_DISPLAY}
+                </a>
+              </p>
+
               <p className="text-gray-400 text-xs pt-2">
                 Available 24/7/365 &mdash; including bank holidays
               </p>
-            </div>
+            </address>
 
             {/* Trust signals */}
             <div className="mt-5 space-y-1.5 text-xs text-gray-400">
@@ -105,11 +123,11 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm">
               {[
-                ['Car Lockout Service',    '/car-lockout-service'],
-                ['Car Key Replacement',    '/car-key-replacement'],
-                ['Lost Car Keys',          '/lost-car-keys'],
-                ['Car Key Programming',    '/car-key-programming'],
-                ['Emergency Auto Locksmith', '/emergency-auto-locksmith'],
+                ['Car Lockout Service',       '/car-lockout-service'],
+                ['Car Key Replacement',       '/car-key-replacement'],
+                ['Lost Car Keys',             '/lost-car-keys'],
+                ['Car Key Programming',       '/car-key-programming'],
+                ['Emergency Auto Locksmith',  '/emergency-auto-locksmith'],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link href={href} className="hover:text-yellow-400 transition-colors">
@@ -127,11 +145,11 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm">
               {[
-                ['Auto Locksmith Wigan',         '/auto-locksmith-wigan'],
-                ['Auto Locksmith Chorley',        '/auto-locksmith-chorley'],
-                ['Auto Locksmith Leyland',        '/auto-locksmith-leyland'],
-                ['Auto Locksmith St Helens',      '/auto-locksmith-st-helens'],
-                ['Auto Locksmith Skelmersdale',   '/auto-locksmith-skelmersdale'],
+                ['Auto Locksmith Wigan',        '/auto-locksmith-wigan'],
+                ['Auto Locksmith Chorley',       '/auto-locksmith-chorley'],
+                ['Auto Locksmith Leyland',       '/auto-locksmith-leyland'],
+                ['Auto Locksmith St Helens',     '/auto-locksmith-st-helens'],
+                ['Auto Locksmith Skelmersdale',  '/auto-locksmith-skelmersdale'],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link href={href} className="hover:text-yellow-400 transition-colors">
@@ -149,10 +167,10 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm mb-6">
               {[
-                ['Locked Out? What To Do',    '/advice/what-to-do-locked-out-of-car'],
-                ['Key Replacement Cost UK',   '/advice/car-key-replacement-cost-uk'],
-                ['Key Without Original?',     '/advice/can-locksmith-make-key-without-original'],
-                ['Types of Car Keys',         '/advice/types-of-car-keys-explained'],
+                ['Locked Out? What To Do',  '/advice/what-to-do-locked-out-of-car'],
+                ['Key Replacement Cost UK', '/advice/car-key-replacement-cost-uk'],
+                ['Key Without Original?',   '/advice/can-locksmith-make-key-without-original'],
+                ['Types of Car Keys',       '/advice/types-of-car-keys-explained'],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link href={href} className="hover:text-yellow-400 transition-colors">
@@ -176,8 +194,8 @@ export default function Footer() {
       <div className="border-t border-gray-800">
         <div className="max-w-6xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
           <p>
-            &copy; {currentYear} RTI Auto Locksmith. Mobile auto locksmith covering Wigan,
-            Chorley, Leyland, St Helens, and Skelmersdale.
+            &copy; {currentYear} RTI Auto Locksmith. 4A Loch Street, Wigan, WN5 0AN.
+            Mobile auto locksmith covering Wigan, Chorley, Leyland, St Helens &amp; Skelmersdale.
           </p>
           <div className="flex items-center gap-1 text-yellow-400">
             {'★★★★★'.split('').map((star, i) => (

@@ -161,13 +161,29 @@ export default function ContactPage() {
 
         <div className="mt-12 border-t border-gray-100 pt-12">
           <h2 className="text-xl font-bold text-gray-900 mb-4">Business Information</h2>
-          <div className="text-gray-700 space-y-2 text-sm">
+          <address className="not-italic text-gray-700 space-y-2 text-sm">
             <p><strong>Business name:</strong> RTI Auto Locksmith</p>
-            <p><strong>Type:</strong> Mobile auto locksmith (service-area business — no fixed premises open to the public)</p>
+            <p>
+              <strong>Address:</strong> 4A Loch Street, Wigan, WN5 0AN, United Kingdom
+            </p>
+            <p>
+              <strong>Phone:</strong>{' '}
+              <a href="tel:+447309903243" className="text-yellow-600 hover:text-yellow-700 font-semibold">
+                07309 903 243
+              </a>{' '}
+              <span className="text-gray-500">(24/7 — no call-out fee)</span>
+            </p>
+            <p>
+              <strong>Email:</strong>{' '}
+              <a href="mailto:rtiautolocksmith@gmail.com" className="text-yellow-600 hover:text-yellow-700">
+                rtiautolocksmith@gmail.com
+              </a>
+            </p>
+            <p><strong>Type:</strong> Mobile auto locksmith (service-area business — we come to you)</p>
             <p><strong>Service area:</strong> Wigan and approximately 15 miles radius, including Chorley, Leyland, St Helens, and Skelmersdale</p>
             <p><strong>Hours:</strong> 24 hours a day, 7 days a week, 365 days a year — including all bank holidays</p>
             <p><strong>Call-out fee:</strong> None</p>
-          </div>
+          </address>
         </div>
       </section>
 

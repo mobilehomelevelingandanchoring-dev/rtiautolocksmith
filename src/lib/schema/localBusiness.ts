@@ -6,10 +6,10 @@ export const BUSINESS_PHONE = '+447309903243'
 /** Shared PostalAddress block — used in every LocalBusiness schema */
 const POSTAL_ADDRESS = {
   '@type': 'PostalAddress',
-  streetAddress: 'Wigan',          // SAB — no street number; use town
+  streetAddress: '4A Loch Street',
   addressLocality: 'Wigan',
   addressRegion: 'Greater Manchester',
-  postalCode: 'WN1',
+  postalCode: 'WN5 0AN',
   addressCountry: 'GB',
 }
 

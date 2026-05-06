@@ -94,12 +94,12 @@ const localBusinessSchema = {
     opens: '00:00',
     closes: '23:59',
   },
-  // Service-area business — no physical shopfront
   address: {
     '@type': 'PostalAddress',
+    streetAddress: '4A Loch Street',
     addressLocality: 'Wigan',
     addressRegion: 'Greater Manchester',
-    postalCode: 'WN1',
+    postalCode: 'WN5 0AN',
     addressCountry: 'GB',
   },
   geo: {
